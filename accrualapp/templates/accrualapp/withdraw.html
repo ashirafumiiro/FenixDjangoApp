@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Employees accrual system</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Fill in the Required information below</h1>
+<p>Balance: {{ balance_points }}</p>
+<form class="form-horizontal" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="points">Points to Request: </label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control"
+                   name="points"
+                   value="" id="points" placeholder="Enter points below your balance">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="reason">Reason:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   name="reason-for-withdraw" id="reason" placeholder="Enter Reason"
+                   value="" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="password">Confirm Password:</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control"
+                   name="password" id="password" placeholder="Enter Password"
+                    required>
+        </div>
+    </div>
+    <div style="color: red;">{{ error }}</div>
+    <div style="color: red;"></div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</form>
+
+<em>&copy; 2019</em>
+</body>
+</html>
